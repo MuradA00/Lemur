@@ -48,6 +48,7 @@
     "node": "14"
   },
   "dependencies": {
+    "@dartmoon/aos-responsive": "^1.0.1",
     "@gulp-sourcemaps/identity-map": "2.0.1",
     "autoprefixer": "10.2.5",
     "browser-sync": "^2.27.9",

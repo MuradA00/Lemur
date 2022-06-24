@@ -62,10 +62,25 @@
     }
   }
 
+  .flag-image {
+    position: absolute;
+    width: 100%;
+    max-width: clamp(20rem, 46vw, 46rem);
+    top: 40%;
+    right: calc(-7.5vw + clamp(.75rem, 0.9375vw, 1.25rem));
+    @include max-w(41.875rem) {
+      max-width: 5rem;
+      top: calc(0px + 4rem);
+      right: 0;
+
+    }
+  }
+
   .type-text {
     position: relative;
     z-index: 5;
     animation: typing 3s ease infinite;
+
   }
 
   .gradient-top {
