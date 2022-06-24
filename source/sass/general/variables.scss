@@ -1,0 +1,58 @@
+:root {
+  --primary-ff: 'Manrope', sans-serif;
+  --sec-ff: 'Dela Gothic One', cursive;
+
+  --clr-white: #fff;
+  --clr-dark: #393939;
+  --clr-violet: #6457A6;
+  --clr-red: #EF767A;
+  --clr-green: #16E097;
+  --main-bg:  #1B1B1B;
+
+  --16-spacing: 1rem;
+  --20-spacing: 1.25rem;
+  --40-spacing: 2.5rem;
+  --30-spacing: 1.875rem;
+  --60-spacing: 3.75rem;
+
+}
+
+._container {
+  max-width: 78.125rem;
+  padding: 0 clamp(0.625rem, .9375vw, var(--20-spacing));
+  margin-inline: auto;
+}
+
+._btn {
+  display: inline-flex;
+  padding: clamp(.7rem, 1vw, 1rem);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-green);
+  width: 100%;
+  max-width: 13.9375rem;
+  font-size: 1rem;
+  color: var(--clr-white);
+  font-weight: 600;
+  font-size: var(--primary-ff);
+  box-shadow: 0px 16px 25px 0px rgba(22, 224, 151, 0.3);
+  border-radius: 1rem;
+  transition: all .3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    @include psevdo;
+    width: 3rem;
+    height: 150%;
+    background-color: rgba(255, 255, 255, .4);
+    transform: rotate(20deg);
+    left: -5rem;
+    transition: all .35s ease-in-out;
+
+  }
+  &:hover::before {
+    left: 120%;
+    transform-origin: left;
+
+  }
+}

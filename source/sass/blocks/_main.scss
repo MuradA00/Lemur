@@ -1,0 +1,180 @@
+.main {
+  min-height: 100%;
+  height: 100vh;
+  background-color: var(--main-bg);
+  position: relative;
+  overflow: hidden;
+  &__container {
+    height: 100%;
+  }
+  &__info {
+    & > *:not(:last-child) {
+      padding-bottom: clamp(1rem, 2.5vw, var(--40-spacing));
+    }
+  }
+  &__title {
+    font-family: var(--sec-ff);
+    max-width: clamp(20rem, 55vw, 55rem);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 125%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__subinfo {
+    max-width: clamp(25rem, 36.25vw, 36.25rem);
+    font-size: clamp(.8rem, 1vw, 1rem);
+    line-height: 150%;
+  }
+  &__body {
+    height: 100%;
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 10;
+    &::before {
+      @include psevdo;
+      width: clamp(25rem, 56vw, 56.4375rem);
+      top: -1vw;
+      height: 100%;
+      left: -11.875vw;
+      background-image: url('../../img/sprite/before-effect-1.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    &::after {
+      @include psevdo;
+      width: clamp(25rem, 56vw, 56.4375rem);
+      height: 100%;
+      top: 1vw;
+      left: -6.300001vw;
+      background-image: url('../../img/sprite/after-effect-1.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+
+  .type-text {
+    position: relative;
+    z-index: 5;
+    animation: typing 3s ease infinite;
+  }
+
+  .gradient-top {
+    position: absolute;
+    // width: 1136px;
+    // height: 844px;
+    // background-color: var(--clr-red);
+    // border-radius: 50%;
+    // top: -50%;
+    // right: 20%;
+    // opacity: 0.5;
+    top: -30%;
+    right: 20%;
+    animation: liquid 7s linear infinite;
+    will-change: filter;
+  }
+}
+
+.lemur-icon {
+  position: absolute;
+  right: calc(0px + clamp(0.75rem, .9375vw, 1.25rem));
+  top: 25%;
+  animation: circleAnim 11s ease-in infinite;
+}
+
+@keyframes circleAnim {
+  0% {
+    transform: rotate(-360deg);
+  }
+}
+
+.mouse-icon {
+  position: absolute;
+  bottom: calc(0px + clamp(1.5rem, 3.6875vw, 3.687rem));
+  right: calc(-30px + 50%);
+  cursor: pointer;
+  animation: bouncing-icon 2s .5s forwards infinite;
+}
+
+@keyframes bouncing-icon {
+  0% {
+    transform: translateY(0);
+  }
+  // 50% {
+  //   transform: translateY(30px);
+  // }
+  25% {
+    transform: translateY(25px);
+  }
+  // 50% {
+  //   transform: translateY(0px);
+  // }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+@keyframes gradient {
+  0% {
+      background-position: 80% 0%;
+  }
+  50% {
+      background-position: 20% 100%;
+  }
+  100% {
+      background-position: 80% 0%;
+  }
+}
+
+// @keyframes liquid {
+//   0% {
+//     transform: rotate(0deg);
+//     filter: hue-rotate(0deg);
+//   }
+//   25% {
+//     transform: rotate(15deg);
+//   }
+//   50% {
+//     transform: rotate(0deg);
+//   }
+//   75% {
+//     transform: rotate(-15deg);
+//   }
+//   100% {
+
+//     transform: rotate(10deg);
+//     filter: hue-rotate(360deg) ;
+//   }
+// }
+
+
+@keyframes textTyping {
+100% {
+  left: 100%;
+  margin: 0 -35px 0 35px;
+}
+}
+
+@include max-w(41.875rem) {
+  .lemur-icon {
+    display: none;
+  }
+  .main {
+    &__title {
+      max-width: 100%;
+    }
+    &__subinfo {
+      max-width: 100%;
+    }
+  }
+}
