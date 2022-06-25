@@ -70,7 +70,7 @@
     right: calc(-7.5vw + clamp(.75rem, 0.9375vw, 1.25rem));
     @include max-w(41.875rem) {
       max-width: 5rem;
-      top: calc(0px + 4rem);
+      top: calc(0px + 7rem);
       right: 0;
 
     }
@@ -114,7 +114,7 @@
 
 .mouse-icon {
   position: absolute;
-  bottom: calc(0px + clamp(1.5rem, 3.6875vw, 3.687rem));
+  bottom: calc(0px + clamp(3.5rem, 5.6875vw, 5.687rem));
   right: calc(-30px + 50%);
   cursor: pointer;
   animation: bouncing-icon 2s .5s forwards infinite;
